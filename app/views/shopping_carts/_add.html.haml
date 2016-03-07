@@ -1,4 +1,5 @@
 =form_tag(shopping_cart_engine.add_shopping_carts_path, method: :post) do
+  -binding.pry
   -if qnt
     .div.col-xs-2
       = number_field_tag :quantity, '1', min: 1, class: number_class
