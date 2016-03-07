@@ -13,7 +13,7 @@ module ShoppingCart
 
   # This is what I was trying to figure out
   def self.config(&block)
-    @@config ||= MyEngine::Configuration.new
+    @@config ||= ShoppingCart::Configuration.new
     yield @@config if block
     return @@config
   end
