@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ShoppingCart::VERSION
   s.authors     = ["SarCasm"]
   s.email       = ["sarcasm008@gmail.com"]
-  s.homepage    = "oppps"
+  s.homepage    = "https://github.com/iSarCasm/shopping_cart_engine"
   s.summary     = "oppps"
   s.description = "oppps"
   s.license     = "MIT"
