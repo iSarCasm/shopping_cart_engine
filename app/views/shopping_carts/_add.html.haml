@@ -1,9 +1,9 @@
 =form_tag(shopping_cart_engine.add_shopping_carts_path, method: :post) do
-  -if qnt
+  -if @qnt
     .div.col-xs-2
-      = number_field_tag :quantity, '1', min: 1, class: number_class
+      = number_field_tag :quantity, '1', min: 1, class: @number_class
   -else
     = hidden_field_tag :quantity, 1
-  = hidden_field_tag :product, product.id
+  = hidden_field_tag :product, @product.id
   .actions
-    =submit_tag 'Add to Cart', class: classes
+    =submit_tag @text, class: @classes
