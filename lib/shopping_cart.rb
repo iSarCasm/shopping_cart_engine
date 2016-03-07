@@ -6,14 +6,7 @@ module ShoppingCart
 
   mattr_accessor :with_coupons
 
-  class Engine < Rails::Engine
-    initializer "my_engine.configure_rails_initialization" do |app|
-    end
-  end
-
-  # This is what I was trying to figure out
-  def self.config(&block)
-    yield @@config if block
-    return @@config
+  def self.setup(&block)
+    yield self
   end
 end
