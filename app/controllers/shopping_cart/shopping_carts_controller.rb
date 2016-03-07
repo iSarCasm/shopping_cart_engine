@@ -4,7 +4,7 @@ class ShoppingCartsController < ApplicationController
   end
 
   def add
-    current_cart.add(params[:book], params[:quantity].to_i)
+    current_cart.add(params[:product], params[:quantity].to_i)
     current_cart.save
 
     respond_to do |format|

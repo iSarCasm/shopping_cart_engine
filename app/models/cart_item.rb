@@ -2,6 +2,8 @@ class CartItem
   attr_reader :id
   attr_accessor :quantity
 
+  @product_class  = 'Book'
+
   def initialize(item_id, quantity = 1)
     @id = item_id
     @quantity = quantity
@@ -13,7 +15,7 @@ class CartItem
   end
 
   def book
-    Book.find(@id)
+    @@product_class.constantize.find(@id)
   end
 
   def sum

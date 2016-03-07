@@ -1,20 +1,23 @@
 class ShoppingCart
   attr_reader :items
-  SESSION_KEY = :cart
+
+  @session_key = :cart
+  @product_class  = ShoppingCart.product_class
+  @coupon_class   = ShoppingCart.coupon_class || 'Coupon'
 
   def initialize(session = {})
     @@session = session
     @items = []
-    restore(session[SESSION_KEY])
+    restore(session[@@session_key])
   end
 
-  def add(book, count = 1)
-    book = accept_book_model(book)
+  def add(product, count = 1)
+    product = accept_product_model(product)
     count.times do
-      if present?(book)
-        find(book).increase
+      if present?(product)
+        find(product).increase
       else
-        @items << CartItem.new(book)
+        @items << CartItem.new(product)
       end
     end
   end
@@ -37,7 +40,7 @@ class ShoppingCart
   end
 
   def coupon
-    Coupon.find_by(name: @coupon)
+    @@coupon_class.constantize.find_by(name: @coupon)
   end
 
   def size
@@ -61,32 +64,32 @@ class ShoppingCart
   end
 
   def save
-    @@session[SESSION_KEY] = self
+    @@session[@@session_key] = self
   end
 
   private
 
-  def accept_book_model(model)
-    model.is_a?(Book) ? model.id : model
+  def accept_product_model(model)
+    model.is_a?(@@product_class.constantize) ? model.id : model
   end
 
   def accept_coupon_model(model)
-    model.is_a?(Coupon) ? model.name : model
+    model.is_a?(@@coupon_class.constantize) ? model.name : model
   end
 
   def restore(hash)
-    return unless @@session[SESSION_KEY]
+    return unless @@session[@@session_key]
     hash["items"].each do |item|
       @items << CartItem.restore(item)
     end
     @coupon = hash["coupon"]
   end
 
-  def present?(book_id)
-    @items.any? { |item| item.id == book_id }
+  def present?(product_id)
+    @items.any? { |item| item.id == product_id }
   end
 
-  def find(book_id)
-    @items.find { |item| item.id == book_id }
+  def find(product_id)
+    @items.find { |item| item.id == product_id }
   end
 end
