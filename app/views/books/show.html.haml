@@ -1,0 +1,36 @@
+.container
+  .row
+    .col-md-4
+      %center
+        %img{src: @book.image_url(:normal)}
+    .col-md-8
+      %h2= @book.title
+      %p
+        %strong= "#{t('book.price')}:"
+        = number_to_currency @book.price
+      %p
+        %strong= t('book.category').pluralize(@book.categories.count) + ':'
+        = categories_links(@book.categories)
+      %p
+        %strong= t('book.author').pluralize(@book.authors.count) + ':'
+        = author_links(@book.authors)
+      %p
+        %strong= "#{t('book.desc')}:"
+        = @book.desc
+      %p
+        %strong= "#{t('book.avg_rating')}:"
+        = @book.rating
+      =render 'books/add', book: @book
+  %br
+    -if can? :create, Review
+      .row.col-md-4
+        %h3= t('book.reviews.add')
+        =render 'reviews/review_form', book: @book
+  %br
+    -if can? :read, Review
+      .row.col-md-12
+        %h3= t('book.reviews.title')
+        =render @reviews
+        - if @reviews.empty?
+          %p
+            %i= t('book.reviews.empty')

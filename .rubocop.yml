@@ -1,0 +1,30 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - spec/**/*
+    - config/**/*
+
+Documentation:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
