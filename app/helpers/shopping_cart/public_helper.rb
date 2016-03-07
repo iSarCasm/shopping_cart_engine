@@ -5,7 +5,7 @@ module ShoppingCart::PublicHelper
         product: product,
         classes: classes,
         qnt: qnt,
-        number_class: number_class
+        number_class: number_class,
         text: text
       }
   end
