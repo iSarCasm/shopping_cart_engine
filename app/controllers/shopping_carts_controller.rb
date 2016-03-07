@@ -1,6 +1,6 @@
 class ShoppingCartsController < ApplicationController
   def show
-    render 'checkouts/empty_cart' if current_cart.empty?
+    render 'shopping_carts/empty_cart' if current_cart.empty?
   end
 
   def add
