@@ -1,5 +1,5 @@
 .container
-  =form_tag(shopping_carts_path, method: :put) do
+  =form_tag(ShoppingCart::Engine.shopping_carts_path, method: :put) do
     .row
       .col-xs-12
         %table.table.table-hover
@@ -36,6 +36,6 @@
   .row
     .col-xs-12
       %br
-      = link_to 'Clear', clear_shopping_carts_path, method: :delete, class: ['btn', 'btn-primary']
+      = link_to 'Clear', ShoppingCart::Engine.clear_shopping_carts_path, method: :delete, class: ['btn', 'btn-primary']
       .pull-right
-        = link_to 'Checkout', checkout_shopping_carts_path, method: :post, class: ['btn', 'btn-primary']
+        = link_to 'Checkout', ShoppingCart::Engine.checkout_shopping_carts_path, method: :post, class: ['btn', 'btn-primary']
