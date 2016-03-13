@@ -1,5 +1,7 @@
 module ShoppingCart
   class Engine < ::Rails::Engine
+    isolate_namespace ShoppingCart
+
     # initializer 'shopping_cart.action_controller' do |app|
     #   ActiveSupport.on_load :action_controller do
     #     helper ShoppingCart::PublicHelper
