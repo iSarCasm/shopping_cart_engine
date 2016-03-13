@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-
-  mount ShoppingCart::Engine => "/shopping_cart"
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount ShoppingCart::Engine => "/cart"
+  root 'pages#index'
 end

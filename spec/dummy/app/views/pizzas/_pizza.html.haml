@@ -1,0 +1,9 @@
+.col-md-4.col-sm-6.book
+  %h3
+    %strong= "Пицца \"#{pizza.title}\""
+  %center
+    %img{src: pizza.photo_url(:normal)}
+  %br
+  %p= pizza.desc
+  %p= "#{pizza.price} грн"
+  = add_cart_button pizza, text: 'Купить!', qnt: false

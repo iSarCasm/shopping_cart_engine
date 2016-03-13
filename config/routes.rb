@@ -1,5 +1,5 @@
 ShoppingCart::Engine.routes.draw do
-  resource :shopping_carts, only: [:show, :update], path: '/cart' do
+  resource :carts, only: [:show, :update], path: '/cart' do
     collection do
       post    :add
       delete  :clear

@@ -10,6 +10,28 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require normalize-rails
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
+
+ html {
+  padding-top: 100px;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+
+footer {
+  width: 100%;
+  padding-top: 30px;
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 80px;
+}
