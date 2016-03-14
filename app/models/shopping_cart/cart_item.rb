@@ -16,7 +16,7 @@ module ShoppingCart
     end
 
     def product
-      @@product_class.constantize.find(@id)
+      @@product_class.constantize.find_by_id(@id)
     end
 
     def sum
