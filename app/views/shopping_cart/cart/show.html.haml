@@ -37,6 +37,6 @@
   .row
     .col-xs-12
       %br
-      = link_to 'Clear', clear_path, method: :delete, class: ['btn', 'btn-primary']
+      = link_to 'Clear', shopping_cart.clear_path, method: :delete, class: ['btn', 'btn-primary']
       .pull-right
-        = link_to 'Checkout', checkout_path, method: :post, class: ['btn', 'btn-primary']
+        = link_to 'Checkout', shopping_cart.checkout_path, method: :post, class: ['btn', 'btn-primary']
