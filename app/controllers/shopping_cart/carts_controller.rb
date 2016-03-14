@@ -33,14 +33,7 @@ module ShoppingCart
     end
 
     def checkout
-      if current_user
-        order = Order.create_from_cart(cart: current_cart, user: current_user)
-        current_cart.clear
-        current_cart.save
-        redirect_to edit_address_checkout_path(order)
-      else
-        redirect_to new_user_session_path, redirect_path: shopping_carts_path
-      end
+      # Has to be overriden in the MainApp
     end
 
     def clear

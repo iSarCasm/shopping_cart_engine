@@ -8,6 +8,10 @@ module ShoppingCart
       copy_file "initializer.rb", "config/initializers/shopping_cart.rb"
     end
 
+    def copy_controller
+      copy_file "carts_controller.rb", "app/controllers/shopping_cart/carts_controller.rb"
+    end
+
     def copy_locale
       copy_file "../../../../../config/locales/en.yml", "config/locales/shopping_cart.en.yml"
     end
