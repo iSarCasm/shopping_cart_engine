@@ -29,7 +29,8 @@ Shopping Cart gem provides the VERY BASIC functionality of cookie-shopping-cart.
     * - `with_coupons` indicates whether your site is even using any coupons.
   
 5. Customize your checkout action. Go to `app/controller/shopping_cart/checkout_controller.rb` and change `#checkout` action as you wish. This is called when user clicks `checkout` button. 
-  *REMINDER*: if you trying to use your's app routes do it like this: `main_app.root_path` instead of `root_path`!
+
+  **REMINDER**: if you trying to use your's app routes do it like this: `main_app.root_path` instead of `root_path`!
 
 ## Very Simple Requirements
 1. Product
