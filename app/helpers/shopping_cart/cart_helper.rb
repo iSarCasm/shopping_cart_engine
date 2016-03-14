@@ -12,5 +12,10 @@ module ShoppingCart
           number_class: number_class,
           text: text
     end
+
+    def cart_icon(icon: 'shopping-cart')
+      render 'shopping_cart/cart/icon',
+        cart_icon: icon
+    end
   end
 end
