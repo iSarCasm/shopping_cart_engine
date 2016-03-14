@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shopping_cart (0.0.44)
+    shopping_cart (0.1.14)
       rails (~> 4.2.5)
 
 GEM

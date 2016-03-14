@@ -12,7 +12,7 @@
           %tbody
             - current_cart.items.each do |item|
               %tr
-                %td= item.product.title
+                %td= item.title
                 %td= number_to_currency item.price
                 %td
                   =number_field_tag "[cart_items][#{item.product.id}][quantity]", item.quantity, min: 0, class: ['form-control', 'input-sm']
