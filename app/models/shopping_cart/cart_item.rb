@@ -16,27 +16,41 @@ module ShoppingCart
     end
 
     def product
-      @@product_class.constantize.find_by_id(@id)
+      @@product_class.constantize.find_by_id(@id) || NillCartItemProduct.new
     end
 
     def sum
-      product.price * @quantity if product
+      product.price * @quantity
     end
 
     def id
-      product.id if product
+      product.id
     end
 
     def price
-      product.price if product
+      product.price
     end
 
     def title
-      product.title if product
+      product.title
     end
 
     def increase
       @quantity += 1
+    end
+  end
+
+  class NillCartItemProduct
+    def id
+      nil
+    end
+
+    def price
+      0
+    end
+
+    def title
+      'nil'
     end
   end
 end
