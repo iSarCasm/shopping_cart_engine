@@ -87,12 +87,11 @@ module ShoppingCart
     end
 
     def present?(product_id)
-      binding.pry
-      @items.any? { |item| item.id == product_id }
+      @items.any? { |item| item.id.to_s == product_id.to_s }
     end
 
     def find(product_id)
-      @items.find { |item| item.id == product_id }
+      @items.find { |item| item.id.to_s == product_id.to_s }
     end
   end
 end
