@@ -3,10 +3,10 @@ Shopping Cart gem provides the VERY BASIC functionality of cookie-shopping-cart.
 
 ## Installation 
 1. Add Gem to your Gemfile:
-```ruby
-gem 'shopping_cart', git: 'https://github.com/iSarCasm/shopping_cart_engine'
-```
-And do not forget run `bundle install`.
+  ```ruby
+  gem 'shopping_cart', git: 'https://github.com/iSarCasm/shopping_cart_engine'
+  ```
+  And do not forget run `bundle install`.
 
 2. Run `rails generate shopping_cart:install`
 
