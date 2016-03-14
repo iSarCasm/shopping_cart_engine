@@ -72,7 +72,7 @@ Example:
     %a{href: book_path(book)}= book.title
   %p= truncate(book.desc, length: 100, separator: ' ')
   %p= number_to_currency(book.price)
-  =add_cart_button book, text: t('cart.add')
+  =add_cart_button book, text: "BUY NOW!!!"
 ```
 
 ### cart_icon(options={})
