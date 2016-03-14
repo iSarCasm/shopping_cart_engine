@@ -35,7 +35,7 @@ module ShoppingCart
     def clear
       current_cart.clear
       current_cart.save
-      redirect_to shopping_carts_path
+      redirect_to cart_path
     end
   end
 end
