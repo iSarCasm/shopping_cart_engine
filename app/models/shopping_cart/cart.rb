@@ -87,6 +87,7 @@ module ShoppingCart
     end
 
     def present?(product_id)
+      binding.pry
       @items.any? { |item| item.id == product_id }
     end
 
