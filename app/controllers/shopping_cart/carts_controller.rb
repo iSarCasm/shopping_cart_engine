@@ -4,7 +4,6 @@ module ShoppingCart
     end
 
     def add
-      binding.pry
       current_cart.add(params[:product], params[:quantity].to_i)
       current_cart.save
 
