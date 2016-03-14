@@ -5,17 +5,17 @@
         %table.table.table-hover
           %thead
             %tr
-              %th.col-xs-9 Book
+              %th.col-xs-9 ShoppingCart.product_class
               %th.col-xs-1 Price
               %th.col-xs-1 Qty
               %th.col-xs-1 Total
           %tbody
             - current_cart.items.each do |item|
               %tr
-                %td= item.book.title
+                %td= item.product.title
                 %td= number_to_currency item.price
                 %td
-                  =number_field_tag "[cart_items][#{item.book.id}][quantity]", item.quantity, min: 0, class: ['form-control', 'input-sm']
+                  =number_field_tag "[cart_items][#{item.product.id}][quantity]", item.quantity, min: 0, class: ['form-control', 'input-sm']
                 %td= number_to_currency item.sum
             %tr.warning
               %td

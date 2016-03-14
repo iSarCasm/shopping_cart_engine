@@ -3,7 +3,7 @@ module ShoppingCart
     attr_reader :id
     attr_accessor :quantity
 
-    @product_class  = 'Book'
+    @@product_class  =  ShoppingCart.product_class
 
     def initialize(item_id, quantity = 1)
       @id = item_id
@@ -15,7 +15,7 @@ module ShoppingCart
       CartItem.new(hash["id"], hash["quantity"])
     end
 
-    def book
+    def product
       @@product_class.constantize.find(@id)
     end
 
