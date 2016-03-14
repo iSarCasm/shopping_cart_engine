@@ -9,7 +9,7 @@ module ShoppingCart
     end
 
     def copy_controller
-      copy_file "carts_controller.rb", "app/controllers/shopping_cart/carts_controller.rb"
+      copy_file "carts_controller.rb", "app/controllers/shopping_cart/checkout_controller.rb"
     end
 
     def copy_locale

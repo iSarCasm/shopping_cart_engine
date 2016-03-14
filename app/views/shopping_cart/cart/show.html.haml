@@ -1,5 +1,5 @@
 .container
-  =form_tag(carts_path, method: :put) do
+  =form_tag(cart_path, method: :put) do
     .row
       .col-xs-12
         %table.table.table-hover
@@ -31,11 +31,12 @@
       .col-xs-12
         .pull-left
           .div.form-inline
-            = text_field_tag :coupon, nil, placeholder: 'Coupon', class: ['form-control']
+            - if ShoppingCart.with_coupons
+              = text_field_tag :coupon, nil, placeholder: 'Coupon', class: ['form-control']
             = submit_tag 'Apply', class: ['btn', 'btn-default']
   .row
     .col-xs-12
       %br
-      = link_to 'Clear', clear_carts_path, method: :delete, class: ['btn', 'btn-primary']
+      = link_to 'Clear', clear_path, method: :delete, class: ['btn', 'btn-primary']
       .pull-right
-        = link_to 'Checkout', checkout_carts_path, method: :post, class: ['btn', 'btn-primary']
+        = link_to 'Checkout', checkout_path, method: :post, class: ['btn', 'btn-primary']

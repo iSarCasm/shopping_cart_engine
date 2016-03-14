@@ -1,5 +1,5 @@
 module ShoppingCart
-  class CartsController < ShoppingCart::ApplicationController
+  class CartController < ShoppingCart::ApplicationController
     def show
     end
 
@@ -30,10 +30,6 @@ module ShoppingCart
         format.js {}
         format.html { redirect_to :back }
       end
-    end
-
-    def checkout
-      # Has to be overriden in the MainApp
     end
 
     def clear

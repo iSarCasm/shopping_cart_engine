@@ -41,7 +41,7 @@ module ShoppingCart
     end
 
     def coupon
-      @@coupon_class.constantize.find_by(name: @coupon)
+      @@coupon_class.constantize.find_by(name: @coupon) if ShoppingCart.with_coupons
     end
 
     def size

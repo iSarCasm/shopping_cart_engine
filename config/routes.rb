@@ -1,9 +1,9 @@
 ShoppingCart::Engine.routes.draw do
-  resource :carts, only: [:show, :update], path: '/cart' do
-    collection do
-      post    :add
-      delete  :clear
-      post    :checkout
-    end
-  end
+    get     "/",       to: 'cart#show',    as: 'cart'
+    post    "/",       to: 'cart#update'
+    put     "/",       to: 'cart#update'
+    post    "/add",      to: 'cart#add',     as: 'add'
+    delete  "/clear",    to: 'cart#clear',   as: 'clear'
+
+    post    "/checkout", to: 'checkout#checkout', as: 'checkout'
 end
