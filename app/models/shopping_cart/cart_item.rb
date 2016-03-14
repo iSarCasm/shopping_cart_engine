@@ -20,15 +20,15 @@ module ShoppingCart
     end
 
     def sum
-      product.price * @quantity
+      product.price * @quantity if product
     end
 
     def price
-      product.price
+      product.price if product
     end
 
     def title
-      product.title
+      product.title if product
     end
 
     def increase
