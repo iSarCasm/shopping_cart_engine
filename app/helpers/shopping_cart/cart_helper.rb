@@ -4,7 +4,7 @@ module ShoppingCart
       @_the_shopping_cart ||= ShoppingCart::Cart.new(session)
     end
 
-    def add_cart_button(product, text: "Add to Cart", classes: ['btn', 'btn-primary'], qnt: true, number_class: 'form-control')
+    def add_cart_button(product, text: t('cart.add'), classes: ['btn', 'btn-primary'], qnt: true, number_class: 'form-control')
       render 'shopping_cart/cart/add',
           product: product,
           classes: classes,

@@ -1,4 +1,4 @@
 %a{href: shopping_cart.cart_path}
   = icon(cart_icon)
-  %strong= t('header.cart')
-  = (current_cart.size == 0 ? "(#{t('header.empty')})" : "(#{current_cart.size } #{t('header.items')})")
+  %strong= t('cart.title')
+  = (current_cart.size == 0 ? "(#{t('cart.empty')})" : "(#{current_cart.size } #{t('cart.items')})")

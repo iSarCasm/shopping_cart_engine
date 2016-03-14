@@ -6,9 +6,9 @@
           %thead
             %tr
               %th.col-xs-9= ShoppingCart.product_class
-              %th.col-xs-1 Price
-              %th.col-xs-1 Qty
-              %th.col-xs-1 Total
+              %th.col-xs-1= t('cart.price')
+              %th.col-xs-1= t('cart.quantity')
+              %th.col-xs-1= t('cart.total')
           %tbody
             - current_cart.items.each do |item|
               %tr
@@ -37,6 +37,6 @@
   .row
     .col-xs-12
       %br
-      = link_to 'Clear', shopping_cart.clear_path, method: :delete, class: ['btn', 'btn-primary']
+      = link_to t('cart.clear'), shopping_cart.clear_path, method: :delete, class: ['btn', 'btn-primary']
       .pull-right
-        = link_to 'Checkout', shopping_cart.checkout_path, method: :post, class: ['btn', 'btn-primary']
+        = link_to t('cart.checkout'), shopping_cart.checkout_path, method: :post, class: ['btn', 'btn-primary']

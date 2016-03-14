@@ -1,2 +1,10 @@
 cart:
-  title: 'Shopping Cart'
+  title: 'Cart'
+  empty: 'Empty'
+  items: 'Items'
+  add: 'Add to Cart'
+  price: 'Price'
+  quantity: 'Qnt'
+  total: 'Total'
+  clear: 'Clear'
+  checkout: 'Checkout'
