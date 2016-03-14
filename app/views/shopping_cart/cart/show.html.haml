@@ -15,7 +15,7 @@
                 %td= item.title
                 %td= number_to_currency item.price
                 %td
-                  =number_field_tag "[cart_items][#{item.product.id}][quantity]", item.quantity, min: 0, class: ['form-control', 'input-sm']
+                  =number_field_tag "[cart_items][#{item.id}][quantity]", item.quantity, min: 0, class: ['form-control', 'input-sm']
                 %td= number_to_currency item.sum
             %tr.warning
               %td

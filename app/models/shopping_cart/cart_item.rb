@@ -23,6 +23,10 @@ module ShoppingCart
       product.price * @quantity if product
     end
 
+    def id
+      product.id if product
+    end
+
     def price
       product.price if product
     end
