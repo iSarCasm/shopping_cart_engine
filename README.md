@@ -43,6 +43,7 @@ The functionality is very simple.
 ### current_cart
 That method is available in your views and controllers which inherit from `ShoppingCart:ActionController`
 Returns the current cart of user. `current_cart` responds to:
+  * `items` - array of CartItems
   * `add(product, count = 1)`
   * `clear`
   * `apply_coupon(coupon)`
